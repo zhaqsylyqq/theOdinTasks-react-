@@ -1,14 +1,18 @@
-/* src/styles/App.css */
+
+/* styles/App.css */
 .App {
-    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
     padding: 20px;
 }
 
-input, textarea {
-    display: block;
-    margin-bottom: 10px;
+.App img {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.2s;
+
 }
 
-button {
-    margin-top: 10px;
+.App img:hover {
+    transform: scale(1.1);
 }

@@ -1,42 +1,34 @@
 // src/App.js
 import React, { useState } from 'react';
-import GeneralInfo from './components/GeneralInfo';
-import Education from './components/Education';
-import Experience from './components/Experience';
 import './styles/App.css';
+import image1 from './images/image1.jpeg';
+import image2 from './images/image2.JPG';
+import image3 from './images/image3.png';
+import image4 from './images/image4.png';
 
 const App = () => {
-	const [generalInfo, setGeneralInfo] = useState({
-		name: '',
-		email: '',
-		phone: '',
-	});
+	const imageArray = [image1, image2, image3, image4];
+	const [image, setImage] = useState(imageArray);
 
-	const [education, setEducation] = useState({
-		school: '',
-		degree: '',
-		date: '',
-	});
+	const shuffleImages = () =>{
+		const shuffled = [...image].sort(()=>Math.random() - 0.5);
+		setImage(shuffled);
+	}
 
-	const [experience, setExperience] = useState({
-		company: '',
-		position: '',
-		responsibilities: '',
-		date: '',
-	});
-
-	const handleGeneralInfoSubmit = (data) => setGeneralInfo(data);
-	const handleEducationSubmit = (data) => setEducation(data);
-	const handleExperienceSubmit = (data) => setExperience(data);
-
-	return (
+	return(
 		<div className="App">
-			<GeneralInfo data={generalInfo} onSubmit={handleGeneralInfoSubmit} />
-			<Education data={education} onSubmit={handleEducationSubmit} />
-			<Experience data={experience} onSubmit={handleExperienceSubmit} />
-			<button onClick={() => console.log({ generalInfo, education, experience })}>Отправить всё резюме</button>
+			{image.map((img, index) => (
+				<img
+					key={index}
+					src={img}
+					alt={`image${index + 1}`}
+					onClick={shuffleImages}
+					style={{ cursor: 'pointer', margin: '10px' }}
+				/>
+			))}
 		</div>
-	);
+	)
+
 };
 
 export default App;
