@@ -1,16 +1,24 @@
-
 /* styles/App.css */
 .App {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #f0f0f0;
     padding: 20px;
+    gap: 20px;
+}
+
+.scoreboard {
+    margin-bottom: 20px;
 }
 
 .App img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
     border: 2px solid #ccc;
     border-radius: 10px;
     transition: transform 0.2s;
-
 }
 
 .App img:hover {
