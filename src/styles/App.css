@@ -1,14 +1,26 @@
-/* src/styles/App.css */
+/* styles/App.css */
 .App {
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
     padding: 20px;
+    gap: 20px;
 }
 
-input, textarea {
-    display: block;
-    margin-bottom: 10px;
+.scoreboard {
+    margin-bottom: 20px;
 }
 
-button {
-    margin-top: 10px;
+.App img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.App img:hover {
+    transform: scale(1.1);
 }
